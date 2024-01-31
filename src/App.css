@@ -1,0 +1,110 @@
+/* App.css */
+
+body {
+  margin: 0;
+  font-family: "Arial", sans-serif;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.app-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header,
+.footer {
+  background-color: #3498db;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  width: 100%;
+}
+
+.centered-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.centered-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.date-selection {
+  margin: 20px 0;
+  margin-bottom: 10px;
+}
+
+.no-data {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  border: 3px solid #3498db;
+}
+
+.date-selection label {
+  margin-right: 10px;
+}
+
+.date-selection input {
+  padding: 8px;
+  border: 1px solid #ddd;
+}
+
+.metrics-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+.metrics-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+.pdf-label {
+  display: flex;
+  align-items: center;
+  margin: 20px;
+}
+
+.pdf-link {
+  margin: 10px;
+  color: #3498db;
+}
+
+.email-section {
+  display: flex;
+  align-items: center;
+  margin: 20px;
+}
+
+.email-section label {
+  margin: 10px;
+}
+
+.email-section input {
+  padding: 8px;
+  border: 1px solid #ddd;
+}
+
+.email-section button {
+  padding: 8px 15px;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  margin: 10px;
+}
+.footerlink {
+  color: #fff;
+}
