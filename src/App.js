@@ -5,15 +5,8 @@ import "./App.css";
 
 const App = () => {
   const [tableData, setTableData] = useState([]);
-  const [email, setEmail] = useState("");
   const [selectedDate, setSelectedDate] = useState(getYesterdayDate());
-  useEffect(() => {
-    fetchData();
-  }, [selectedDate]);
-
-  // const refreshPage = () => {
-  //   window.location.reload();
-  // };
+  
   const fetchData = () => {
     if (!selectedDate) {
       console.error("Please select a date.");
@@ -33,6 +26,10 @@ const App = () => {
         )
       );
   };
+
+  useEffect(() => {
+    fetchData();
+  }, [selectedDate, fetchData]);
 
   const handleDateChange = (e) => {
     const inputDate = new Date(e.target.value);
@@ -55,15 +52,6 @@ const App = () => {
 
     return day + month + year;
   }
-
-  const handleEmailChange = (e) => {
-    setEmail(e.target.value);
-  };
-
-  const handleSubmit = () => {
-    console.log("Email submitted:", email);
-    // email logic to be done. get clarity from shashank
-  };
 
   return (
     <div className="app-container">
@@ -125,8 +113,6 @@ const App = () => {
             onChange={handleDateChange}
           />
         </div>
-
-        {/* <button onClick={refreshPage}>Refresh</button> */}
       </div>
       <div className="pdf-label centered-content">
         <label>Reference:</label>
@@ -138,17 +124,6 @@ const App = () => {
         >
           Analyzing Blockchain Decentralization
         </a>
-      </div>
-
-      <div className="email-section centered-content">
-        <label>Let's keep in touch:</label>
-        <input
-          type="email"
-          placeholder="Enter your email"
-          value={email}
-          onChange={handleEmailChange}
-        />
-        <button onClick={handleSubmit}>Submit</button>
       </div>
 
       <footer className="footer">
