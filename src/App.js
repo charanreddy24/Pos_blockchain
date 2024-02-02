@@ -6,6 +6,10 @@ import "./App.css";
 const App = () => {
   const [tableData, setTableData] = useState([]);
   const [selectedDate, setSelectedDate] = useState(getYesterdayDate());
+
+  useEffect(() => {
+    fetchData();
+  }, [selectedDate]);
   
   const fetchData = () => {
     if (!selectedDate) {
@@ -26,10 +30,6 @@ const App = () => {
         )
       );
   };
-
-  useEffect(() => {
-    fetchData();
-  }, [selectedDate, fetchData]);
 
   const handleDateChange = (e) => {
     const inputDate = new Date(e.target.value);
