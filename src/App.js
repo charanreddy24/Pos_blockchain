@@ -16,8 +16,10 @@ const App = () => {
       console.error("Please select a date.");
       return;
     }
-
-    fetch(`http://127.0.0.1:5000/metrics/${selectedDate}`)
+    let domain = window.location.origin; 
+    let port = 5000;
+    let url = `${domain}:${port}/metrics/${selectedDate}`;
+    fetch(url)
       .then((response) => response.json())
       .then((data) => {
         console.log("Data fetched:", data);
