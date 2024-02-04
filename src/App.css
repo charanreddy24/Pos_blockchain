@@ -3,13 +3,11 @@
 body {
   margin: 0;
   font-family: "Arial", sans-serif;
-  height: 100vh;
-  overflow: hidden;
 }
 
 .app-container {
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
@@ -28,6 +26,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow-y: auto;
 }
 
 .centered-section {
@@ -82,29 +81,13 @@ body {
   color: #3498db;
 }
 
-.email-section {
-  display: flex;
-  align-items: center;
-  margin: 20px;
-}
-
-.email-section label {
-  margin: 10px;
-}
-
-.email-section input {
-  padding: 8px;
-  border: 1px solid #ddd;
-}
-
-.email-section button {
-  padding: 8px 15px;
-  background-color: #3498db;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-  margin: 10px;
-}
 .footerlink {
   color: #fff;
+}
+
+/* Media Query for mobile responsiveness */
+@media screen and (max-width: 600px) {
+  .metrics-table td {
+    font-size: 12px;
+  }
 }

@@ -46,7 +46,7 @@ const App = () => {
 
   function getYesterdayDate() {
     const yesterday = new Date();
-    yesterday.setDate(yesterday.getDate() - 1);
+    yesterday.setDate(yesterday.getDate() - 2);
 
     const day = yesterday.getDate().toString().padStart(2, "0");
     const month = (yesterday.getMonth() + 1).toString().padStart(2, "0");
