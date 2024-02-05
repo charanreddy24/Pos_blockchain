@@ -156,16 +156,31 @@ const App = () => {
       </div>
 
       <footer className="footer">
-        <a
-          className="footerlink"
-          href="https://github.com/sm86"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {" "}
-          Follow me on Github
-        </a>
-      </footer>
+  <a
+    className="footerlink"
+    href="https://github.com/sm86"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <i className="fab fa-github"></i>
+  </a>
+  <a
+    className="footerlink"
+    href="https://twitter.com/sh1sh1nk?lang=en"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <i className="fab fa-twitter"></i> 
+  </a>
+  <a
+    className="footerlink"
+    href="https://www.linkedin.com/in/smotepalli?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <i className="fab fa-linkedin"></i> 
+  </a>
+</footer>
     </div>
   );
 };

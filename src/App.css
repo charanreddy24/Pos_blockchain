@@ -116,6 +116,12 @@ body {
   color: #fff;
 }
 
+.footer i {
+  font-size: 24px;
+  margin-right: 25px;
+  margin-left: 25px; 
+}
+
 @media screen and (max-width: 600px) {
   .metrics-table td {
     font-size: 12px;
