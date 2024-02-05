@@ -31,6 +31,16 @@ const App = () => {
       );
   };
 
+  const handleDatePicker = () => {
+    const currentDate = new Date();
+    const day = currentDate.getDate() - 1;
+    const month = currentDate.getMonth() + 1;
+    const year = currentDate.getFullYear();
+    return `${year}-${month < 10 ? "0" + month : month}-${
+      day < 10 ? "0" + day : day
+    }`;
+  }
+
   const handleDateChange = (e) => {
     const inputDate = new Date(e.target.value);
     const day = inputDate.getDate().toString().padStart(2, "0");
@@ -121,7 +131,7 @@ const App = () => {
             className="date-picker"
             type="date"
             id="datePicker"
-            //value=
+            value= {handleDatePicker()}
             onChange={handleDateChange}
           />
         </div>
