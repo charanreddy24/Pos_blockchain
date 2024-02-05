@@ -35,7 +35,6 @@ const App = () => {
 
   const handleDateChange = (e) => {
     const inputDate = new Date(e.target.value);
-    // setStoreDate(inputDate);
     const day = inputDate.getDate().toString().padStart(2, "0");
     const month = (inputDate.getMonth() + 1).toString().padStart(2, "0");
     const year = inputDate.getFullYear().toString();
@@ -51,10 +50,14 @@ const App = () => {
     const day = yesterday.getDate().toString().padStart(2, "0");
     const month = (yesterday.getMonth() + 1).toString().padStart(2, "0");
     const year = yesterday.getFullYear().toString();
-
+    
     return day + month + year;
   }
 
+  function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
+  
   return (
     <div className="app-container">
       <header className="header">
@@ -62,29 +65,26 @@ const App = () => {
       </header>
 
       {selectedDate ? (
+        <div className="metrics-section">
         <table className="metrics-table">
           {tableData && tableData.length > 0 ? (
             <>
               <thead>
                 <tr>
                   <th>Blockchain</th>
-                  <th>N</th>
-                  <th>nc_safety</th>
-                  <th>nc_safety_percent</th>
-                  <th>nc_liveness</th>
-                  <th>nc_liveness_percent</th>
+                  <th>Number of validators</th>
+                  <th>Nakamoto Coefficient Safety</th>
+                  <th>Nakamoto coefficient Liveness</th>
                   <th>gini</th>
                 </tr>
               </thead>
               <tbody>
                 {tableData.map((item, index) => (
                   <tr key={index}>
-                    <td>{item.blockchain}</td>
+                    <td>{capitalizeFirstLetter(item.blockchain)}</td>
                     <td>{item.N}</td>
-                    <td>{item.nc_safety}</td>
-                    <td>{item.nc_safety_percent}%</td>
-                    <td>{item.nc_liveness}</td>
-                    <td>{item.nc_liveness_percent}%</td>
+                    <td>{item.nc_safety_percent}% ({item.nc_safety})</td>
+                    <td>{item.nc_liveness_percent}% ({item.nc_liveness})</td>
                     <td>{item.gini}</td>
                   </tr>
                 ))}
@@ -99,6 +99,7 @@ const App = () => {
             </div>
           )}
         </table>
+        </div>
       ) : (
         <div>
           <h3 className="no-data"> Please select a date</h3>

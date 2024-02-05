@@ -10,6 +10,10 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  overflow-x: auto; 
+  box-sizing: border-box;
+  padding-left: 2px;
+  padding-right: 2px;
 }
 
 .header,
@@ -18,7 +22,6 @@ body {
   color: #fff;
   padding: 10px;
   text-align: center;
-  width: 100%;
 }
 
 .centered-content {
@@ -27,6 +30,7 @@ body {
   flex-direction: column;
   align-items: center;
   overflow-y: auto;
+  overflow-x: auto;
 }
 
 .centered-section {
@@ -39,6 +43,7 @@ body {
 .date-selection {
   margin: 20px 0;
   margin-bottom: 10px;
+  text-align: center;
 }
 
 .no-data {
@@ -46,7 +51,9 @@ body {
   justify-content: center;
   align-items: center;
   height: 200px;
-  border: 3px solid #3498db;
+  text-wrap: wrap;
+  text-align: center;
+  color: #3498db;
 }
 
 .date-selection label {
@@ -58,16 +65,42 @@ body {
   border: 1px solid #ddd;
 }
 
+.metrics-section {
+  margin-top: 20px;
+  border: 2px solid #3498db; 
+  padding: 10px; 
+  overflow-x: auto; 
+  overflow-y: auto; 
+  background-color: #f5f5f5; /* Add a light background color */
+  border-radius: 10px; 
+}
+
+
 .metrics-table {
   width: 100%;
   border-collapse: collapse;
   margin: 20px 0;
+  white-space: nowrap;
+}
+.metrics-table tbody tr:hover {
+  background-color: #d6eaf8; 
 }
 
+.metrics-table tbody tr:nth-child(even) {
+  background-color: #ecf0f1; 
+}
+
+.metrics-table th,
 .metrics-table td {
   border: 1px solid #ddd;
-  padding: 8px;
+  padding: 10px;
   text-align: center;
+  padding: 12px; 
+  font-size: 14px;
+}
+.metrics-table th {
+  background-color: #3498db;
+  color: #fff;
 }
 
 .pdf-label {
