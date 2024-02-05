@@ -4,11 +4,16 @@ import "./App.css";
 const App = () => {
   const [tableData, setTableData] = useState([]);
   const [selectedDate, setSelectedDate] = useState(getYesterdayDate());
-  const [value, setValue] = useState(handleDatePicker()); 
+  const [value, setValue] = useState(null); 
 
   useEffect(() => {
     fetchData();
   }, [selectedDate]);
+
+  useEffect(() => {
+    setValue(handleDatePicker());
+  }, []);
+
 
   const fetchData = () => {
     if (!selectedDate) {
@@ -47,11 +52,9 @@ const App = () => {
     const day = inputDate.getDate().toString().padStart(2, "0");
     const month = (inputDate.getMonth() + 1).toString().padStart(2, "0");
     const year = inputDate.getFullYear().toString();
-    setValue(`${year}-${month < 10 ? "0" + month : month}-${
-      day < 10 ? "0" + day : day
-    }`)
     const formattedDate = day + month + year;
     setSelectedDate(formattedDate);
+    setValue(e.target.value);
   };
 
   const handleYesterdayDate = () => {
