@@ -1,5 +1,3 @@
-/* App.css */
-
 body {
   margin: 0;
   font-family: "Arial", sans-serif;
@@ -10,7 +8,7 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  overflow-x: auto; 
+  overflow-x: auto;
   box-sizing: border-box;
   padding-left: 2px;
   padding-right: 2px;
@@ -19,8 +17,9 @@ body {
 .header,
 .footer {
   background-color: #3498db;
+  font-size: larger;
   color: #fff;
-  padding: 10px;
+  padding: 15px;
   text-align: center;
 }
 
@@ -67,14 +66,13 @@ body {
 
 .metrics-section {
   margin-top: 20px;
-  border: 2px solid #3498db; 
-  padding: 10px; 
-  overflow-x: auto; 
-  overflow-y: auto; 
-  background-color: #f5f5f5; /* Add a light background color */
-  border-radius: 10px; 
+  border: 2px solid #3498db;
+  padding: 10px;
+  overflow-x: auto;
+  overflow-y: auto;
+  background-color: #f5f5f5;
+  border-radius: 10px;
 }
-
 
 .metrics-table {
   width: 100%;
@@ -83,11 +81,11 @@ body {
   white-space: nowrap;
 }
 .metrics-table tbody tr:hover {
-  background-color: #d6eaf8; 
+  background-color: #d6eaf8;
 }
 
 .metrics-table tbody tr:nth-child(even) {
-  background-color: #ecf0f1; 
+  background-color: #ecf0f1;
 }
 
 .metrics-table th,
@@ -95,7 +93,7 @@ body {
   border: 1px solid #ddd;
   padding: 10px;
   text-align: center;
-  padding: 12px; 
+  padding: 12px;
   font-size: 14px;
 }
 .metrics-table th {
@@ -118,7 +116,6 @@ body {
   color: #fff;
 }
 
-/* Media Query for mobile responsiveness */
 @media screen and (max-width: 600px) {
   .metrics-table td {
     font-size: 12px;
