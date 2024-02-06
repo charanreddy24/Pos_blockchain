@@ -84,7 +84,7 @@ const App = () => {
 
   return (
     <div className="app-container">
-      <header className="header">Decentralization in Pos Blockchains</header>
+      <header className="header">Decentralization in PoS Blockchains</header>
 
       {selectedDate ? (
         <div className="metrics-section">
@@ -97,7 +97,7 @@ const App = () => {
                     <th>Number of validators</th>
                     <th>Nakamoto Coefficient Safety</th>
                     <th>Nakamoto coefficient Liveness</th>
-                    <th>gini</th>
+                    <th>Gini</th>
                   </tr>
                 </thead>
                 <tbody>
