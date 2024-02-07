@@ -48,7 +48,7 @@ const App = () => {
   }
 
   const handleDateChange = (e) => {
-    const inputDate = new Date(e.target.value);
+    const inputDate = new Date(e.target.value + "T00:00:00");
     inputDate.setHours(0, 0, 0, 0);
     const day = inputDate.getDate().toString().padStart(2, "0");
     const month = (inputDate.getMonth() + 1).toString().padStart(2, "0");
