@@ -6,6 +6,7 @@ const App = () => {
   const [selectedDate, setSelectedDate] = useState(getYesterdayDate());
   const [value, setValue] = useState(null); 
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     fetchData();
   }, [selectedDate]);
